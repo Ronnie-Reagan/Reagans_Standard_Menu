@@ -165,7 +165,7 @@ end
 function fetchScript()
     local scriptsFolderAddress = filesystem.scripts_dir()
     local fileName = "Reagans_Standard_Menu.lua"
-    local githubPath = "/Ronnie-Reagan/Reagans_Standard_Menu/" .. fileName
+    local githubPath = "/Ronnie-Reagan/Reagans_Standard_Menu/main/" .. fileName
     local filePath = scriptsFolderAddress .. fileName
     if filesystem.exists(filePath) then
         util.toast("Downloading " .. fileName .. " from GitHub...")
@@ -290,8 +290,8 @@ function checkForUpdates()
 
             if scriptUpdateAvailable or pngUpdateAvailable then
                 util.toast("Update available! Downloading new files...")
-                updating = true
                 if pngUpdateAvailable then
+                    updating = true
                     fetchDashboardTexture()
                 elseif scriptUpdateAvailable then
                     fetchScript()
