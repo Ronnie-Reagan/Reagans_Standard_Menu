@@ -1,4 +1,4 @@
 {
-    "script_Version": 1.31,
+    "script_Version": 1.4,
     "png_Version": 1.3
 }
