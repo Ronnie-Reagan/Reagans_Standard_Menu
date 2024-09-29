@@ -291,8 +291,13 @@ function checkForUpdates()
             if scriptUpdateAvailable or pngUpdateAvailable then
                 util.toast("Update available! Downloading new files...")
                 updating = true
-                fetchDashboardTexture()
-
+                if pngUpdateAvailable then
+                    fetchDashboardTexture()
+                elseif scriptUpdateAvailable then
+                    fetchScript()
+                else
+                    util.toast("Something went wrong, error code 436549")
+                end
                 -- Save updated version tracking
                 local file = io.open(localVersionPath, "w")
                 file:write(body)
